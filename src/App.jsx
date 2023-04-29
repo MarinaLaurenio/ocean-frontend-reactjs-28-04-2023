@@ -3,22 +3,30 @@ import Card from "./components/Card/Card";
 
 const pikachu = {
   nome: "Pikachu",
-  imagemUrl:
-    "https://sm.ign.com/ign_br/screenshot/default/025pikachu-os-anime-10_5z4v.png",
+  imagemUrl: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
 };
 
 const charmander = {
   nome: "Charmander",
-  imagemUrl:
-    "https://oyster.ignimgs.com/mediawiki/apis.ign.com/pokemon-blue-version/d/d4/Charmander.gif",
+  imagemUrl: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
 };
+const bulbasaur = {
+  nome: "Bulbasaur",
+  imagemUrl: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
+};
+
+const itens = [pikachu, charmander, bulbasaur];
 
 function App() {
   return (
     <>
       <h1>Samsung Ocean</h1>
-      <Card item={pikachu} />
-      <Card item={charmander} />
+      <div className="cards">
+        {itens.map(function (cadaItem, index) {
+          return <Card item={cadaItem} key={`card_${index}`} />;
+          /*o key é só para acertar o ordem */
+        })}
+      </div>
     </>
   );
 }
